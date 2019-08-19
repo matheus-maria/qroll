@@ -1,11 +1,10 @@
 {
   "name": "qroll",
   "version": "1.0.0",
-  "description": "FTT App",
+  "description": "Backend for Qroll application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/matheus-maria/qroll#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.6.9",
     "nodemon": "^1.19.1"
   }
 }
