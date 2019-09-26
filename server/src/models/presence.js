@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({   
+const PrecenseSchema = new mongoose.Schema({   
    call: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Call',
@@ -14,4 +14,4 @@ const UserSchema = new mongoose.Schema({
       
 });
 
-mongoose.model('User',UserSchema);
+mongoose.model('Precense',PrecenseSchema);

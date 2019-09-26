@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const CallSchema = new mongoose.Schema({   
-   schedule: {
+   class: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Schedule',
+      ref: 'Class',
       required: true
    },
    date:{

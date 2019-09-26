@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Model = mongoose.model('User');
+const Model = mongoose.model('Precense');
 
 module.exports = {
 
