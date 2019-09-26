@@ -9,6 +9,8 @@ routes.get('/user/:id', UserController.show);
 routes.post('/user', UserController.store);
 routes.put('/user/:id', UserController.update);
 routes.delete('/user/:id', UserController.delete);
+routes.post('/user/validate', UserController.validate);
+
 
 // Call
 const CallController = require('./controllers/CallController');

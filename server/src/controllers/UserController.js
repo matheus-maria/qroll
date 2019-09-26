@@ -16,6 +16,15 @@ module.exports = {
         return res.json(value);
     },
 
+    async validate(req, res) {
+        await Model.findOne({
+            ra: req.body.ra,
+            password: req.body.password
+        }, (err, user) => {
+            return res.json(user);
+        })
+    },
+
     async store(req, res) {
         const value = await Model.create(req.body);
 
