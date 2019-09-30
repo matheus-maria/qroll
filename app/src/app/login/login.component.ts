@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
+import { User } from '../models/app.model';
 
 export class PasswordValidation {
 
@@ -22,7 +24,7 @@ export class PasswordValidation {
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(private router: Router, private fb: FormBuilder, private api: ApiService) { }
 
   public form: FormGroup
   public registerForm: FormGroup
@@ -51,8 +53,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginUser = () => {
+  loginUser = async () => {
 
+    var user = {
+      ra : this.form.get('ra').value,
+      password : this.form.get('password').value
+    }
+    console.log(await this.api.login(user))
   }
 
 }

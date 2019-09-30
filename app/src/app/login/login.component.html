@@ -60,10 +60,10 @@
       <div class="register-footer">
 
          <!-- LOGIN BUTTON -->
-         <button mat-flat-button color="blue" (click)="loginUser" class="register-login" *ngIf="!register" [disabled]="!form.valid">GO!</button>
+         <button mat-flat-button color="blue" (click)="loginUser()" class="register-login" *ngIf="!register" [disabled]="!form.valid">GO!</button>
 
          <!-- REGISTER BUTTON -->
-         <button mat-flat-button color="blue" (click)="registerUser" class="register-login" *ngIf="register" [disabled]="!registerForm.valid">REGISTER</button>
+         <button mat-flat-button color="blue" (click)="registerUser()" class="register-login" *ngIf="register" [disabled]="!registerForm.valid">REGISTER</button>
 
       </div>
 
