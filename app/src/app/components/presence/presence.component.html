@@ -12,7 +12,49 @@
    </div>
 
    <div class="container-body">
-         <ngx-qrcode *ngIf="qrCode != null" id="qrCode" [qrc-element-type]="canvas" [qrc-value] = "qrCode"></ngx-qrcode>
+
+      <mat-card class="concatiner-body-header">
+         <mat-card-title>Chamada</mat-card-title>
+
+         <mat-card-content>
+            <form *ngIf="form" [formGroup]="form" class="concatiner-body-form">
+
+               <!-- Semestre -->
+               <mat-form-field>
+                  <mat-label>Semestre</mat-label>
+                  <mat-select formControlName="semester">
+                        <mat-option *ngFor="let semester of semesters" [value]="semester">                        
+                           <span>{{semester}}</span>
+                        </mat-option>
+                  </mat-select>
+               </mat-form-field>
+
+               <!-- Name -->
+               <mat-form-field>
+                     <mat-label>Classe</mat-label>
+                     <mat-select formControlName="name">
+                           <mat-option *ngFor="let name of names" [value]="name">                        
+                              <span>{{name}}</span>
+                           </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+
+               <!-- Week -->
+               <mat-form-field>
+                  <mat-label>Dia da Semana</mat-label>
+                  <mat-select formControlName="week">
+                        <mat-option *ngFor="let week of weeks" [value]="week">                        
+                           <span>{{week}}</span>
+                        </mat-option>
+                  </mat-select>
+               </mat-form-field>
+
+            </form>
+         </mat-card-content>
+            
+      </mat-card>
+
+      <ngx-qrcode *ngIf="qrCode != null" id="qrCode" [qrc-element-type]="canvas" [qrc-value] = "qrCode"></ngx-qrcode>
    </div>
 
 </div>

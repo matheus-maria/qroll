@@ -10,3 +10,24 @@ export class User {
    password: string
    semester?: SemesterType
 }
+
+export class Class {
+   _id?: string
+   name: string
+   weekDay: WeekType
+   index: number
+   semester: SemesterType
+   user: string
+   
+   get Week(): string {
+      return `${this.weekDay}, ${this.index}º aula`
+   }
+
+   set Week(value: string) {
+
+      let comma = value.indexOf(',')
+
+      this.weekDay = WeekType[value.substring(0, comma)]
+      this.index = +value.substring(comma + 1, comma + 2)     
+   }
+}

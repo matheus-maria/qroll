@@ -27,4 +27,15 @@
       }
       
    }
+
+   .container-body {
+      padding: 15px;
+      
+      .concatiner-body-form {
+         mat-form-field {
+            width: 20%;
+            margin-right: 50px;
+         }
+      }
+   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/app.model';
+import { User, Class } from '../models/app.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -21,7 +21,13 @@ export class ApiService {
     return value
   }
 
-  registerUser = async (user: User) => {
+  registerUser = async (user: User): Promise<any> => {
     return await this.http.post<any>(`${environment.host}/user`,user).toPromise()
+  }
+
+  getClasses = async (): Promise<any> => {
+
+    let values = await this.http.get<Class[]>(`${environment.host}/class/${this.user._id}`).toPromise()
+    return values.map( x => Object.assign(new Class, x))
   }
 }
