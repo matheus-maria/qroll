@@ -1,1 +1,71 @@
-<p>login works!</p>
+<div class="container">
+   <mat-card class="register">
+      
+      <div class="register-header">
+
+         <!-- TITLE -->
+         <div class="register-title">            
+            <button mat-icon-button *ngIf="register" (click)="register = false">
+               <mat-icon fontIcon="fa-arrow-left"></mat-icon>
+            </button>
+            <span>LOGIN</span>
+         </div>
+         
+
+         <!-- REGISTER BUTTON -->
+         <button mat-fab class="register-add" *ngIf="!register" (click)="register = true">
+            <mat-icon fontIcon="fa-plus"></mat-icon>
+         </button>
+
+      </div>
+      
+      <form *ngIf="form && !register" [formGroup]="form" class="register-form">
+
+         <!-- RA -->
+         <mat-form-field>
+            <mat-label>RA</mat-label>
+            <input matInput formControlName="ra" />
+         </mat-form-field>  
+
+         <!-- PASSWORD -->
+         <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="password" />
+         </mat-form-field>  
+
+      </form>
+
+      <form *ngIf="registerForm && register" [formGroup]="registerForm" class="register-form">
+
+         <!-- RA -->
+         <mat-form-field>
+            <mat-label>RA</mat-label>
+            <input matInput formControlName="ra" />
+         </mat-form-field>  
+
+         <!-- PASSWORD -->
+         <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="password" />
+         </mat-form-field> 
+
+         <!-- PASSWORD -->
+         <mat-form-field>
+            <mat-label>Verificação de Senha</mat-label>
+            <input matInput type="password" formControlName="verifyPassword" />
+         </mat-form-field>
+
+      </form>
+
+      <div class="register-footer">
+
+         <!-- LOGIN BUTTON -->
+         <button mat-flat-button color="blue" class="register-login" *ngIf="!register" [disabled]="!form.valid">GO!</button>
+
+         <!-- REGISTER BUTTON -->
+         <button mat-flat-button color="blue" class="register-login" *ngIf="register" [disabled]="!registerForm.valid">REGISTER</button>
+
+      </div>
+
+   </mat-card>
+</div>

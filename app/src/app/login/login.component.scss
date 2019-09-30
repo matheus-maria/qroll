@@ -1,0 +1,92 @@
+.container {
+
+   display: flex;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   background-image: url('../../assets/cefsa.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+
+   .register {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 50vh;
+      width: 70vw;
+      background-color: rgb(255, 226, 100);
+      max-width: 460px;
+      max-height: 510px;
+
+      .register-header {
+
+         display: flex;
+         justify-content: space-between;
+         margin-top: 3vh;
+
+         .register-title {
+            display: flex;
+            color: #0072BC;
+            font-size: 34px;
+            margin-left: 2vw;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 46px;
+
+            span{
+               margin-left: 10px;
+            }
+
+            mat-icon{
+               font-size: 30px;
+            }
+         }
+   
+         .register-add {         
+            background-color: #0072BC;
+            color: white;
+            height: 12vh;
+            width: 12vh;
+            margin-top: 1vh;
+            margin-right: -50px;            
+   
+            mat-icon{
+               display: flex;
+               height: auto;
+               width: auto;
+               justify-content: center;
+               align-items: center;
+               font-size: 5vw;
+            }
+         }
+      }
+
+      .register-form {
+         display: flex;
+         flex-direction: column;
+         flex-grow: 1;
+         padding-left: 2vw;
+         padding-right: 2vw;
+         font-size: 20px;     
+
+         mat-form-field {
+            margin-bottom: 2vh;
+         }
+      }
+
+      .register-footer {
+
+         display: flex;
+         justify-content: center;
+
+         .register-login {
+            height: 6vh;
+            width: 90%;
+            font-size: 20px;
+
+         }
+      }
+      
+   }
+}
