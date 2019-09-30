@@ -47,4 +47,12 @@ export class LoginComponent implements OnInit {
 
   }
 
+  registerUser = () => {
+
+  }
+
+  loginUser = () => {
+
+  }
+
 }
