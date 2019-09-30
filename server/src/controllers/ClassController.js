@@ -1,38 +1,32 @@
 const mongoose = require('mongoose');
 
-const Model = mongoose.model('Class');
+const Class = mongoose.model('Class');
+const Call = mongoose.model('Call');
 
 module.exports = {
 
     async index(req, res) {
-        const value = await Model.find({});
+        const value = await Class.find({});
 
         return res.json(value);        
     },
 
     async show(req, res) {
-        const value = await Model.findById(req.params.id);
-
-        return res.json(value);
+        await Class.find({
+            user: req.params.userId
+        }, (err, value) => {
+            return res.json(value);
+        });        
     },
 
     async store(req, res) {
-        const value = await Model.create(req.body);
+        // Create new Class
+        const clas = await Class.create(req.body);
 
-        return res.json(value);
-    },
+        // Create new Call
+        const call = await Call.create({ class: clas._id })
 
-    async update(req, res) {
-        const value = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true });
-
-        return res.json(value);
-    },
-
-    async delete(req, res) {
-
-        await Model.findByIdAndDelete(req.params.id);
-
-        return res.send();
-    }   
+        return res.json({ class: clas, call: call });
+    }      
 
 }

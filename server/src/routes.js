@@ -25,7 +25,7 @@ routes.delete('/call/:id', CallController.delete);
 const ClassController = require('./controllers/ClassController');
 
 routes.get('/class', ClassController.index);
-routes.get('/class/:id', ClassController.show);
+routes.get('/class/:userId', ClassController.show);
 routes.post('/class', ClassController.store);
 routes.put('/class/:id', ClassController.update);
 routes.delete('/class/:id', ClassController.delete);

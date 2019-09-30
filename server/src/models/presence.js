@@ -2,13 +2,11 @@ const mongoose = require('mongoose');
 
 const PrecenseSchema = new mongoose.Schema({   
    call: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Call',
+      type: String,
       required: true
    },
    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: String,
       required: true
    } 
       

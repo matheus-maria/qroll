@@ -20,8 +20,7 @@ const UserSchema = new mongoose.Schema({
    },
    semester: {
       type: String,
-      enum : ['EC1','EC2','EC3','EC4','EC5','EC6','EC7','EC8','EC9','EC10'],
-      required: true
+      enum : ['EC1','EC2','EC3','EC4','EC5','EC6','EC7','EC8','EC9','EC10']      
    }   
 });
 
