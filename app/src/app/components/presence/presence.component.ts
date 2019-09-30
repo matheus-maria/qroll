@@ -12,13 +12,20 @@ export class PresenceComponent implements OnInit {
 
   constructor(private router: Router, public api: ApiService) { }
 
-  qrCode: string;
+  qrCode: string = null;
 
   ngOnInit() { 
-    if(this.api.user == null)
+    if(this.api.user == null){
       this.router.navigate([''])
+      return
+    }
     
     this.qrCode = this.api.user._id 
+  }
+
+  logout = () => {
+    this.api.user = null
+    this.router.navigate([''])
   }
 
 }

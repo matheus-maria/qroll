@@ -1,0 +1,30 @@
+.container {
+
+   .container-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      color: #0072BC;
+      background-color: rgb(255, 226, 100);
+
+
+      .container-header-logout {
+         display: flex;
+         flex-direction: row;
+         align-items: flex-end;
+
+         span {
+            font-size: 30px;
+            font-weight: 500;
+            font-variant-caps: all-petite-caps;
+            line-height: 46px;
+         }
+   
+         mat-icon {
+            font-size: 20px;
+         }
+      }
+      
+   }
+}

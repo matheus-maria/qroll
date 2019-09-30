@@ -1,3 +1,18 @@
-PRESENCE
-<pre>{{ api.user | json }}</pre>
-<ngx-qrcode *ngIf="qrCode != null" id="qrCodeImage" [qrc-element-type]="canvas" [qrc-value] = "qrCode"></ngx-qrcode>
+<div class="container">
+
+   <div class="container-header">
+      <img src="../../../assets/logo.png">
+      <div class="container-header-logout">
+         <span>{{api.user?.name}}</span>
+         <button mat-icon-button (click)="logout()">
+            <mat-icon fontIcon="fa-sign-out-alt"></mat-icon>
+         </button> 
+      </div>
+      
+   </div>
+
+   <div class="container-body">
+         <ngx-qrcode *ngIf="qrCode != null" id="qrCode" [qrc-element-type]="canvas" [qrc-value] = "qrCode"></ngx-qrcode>
+   </div>
+
+</div>
