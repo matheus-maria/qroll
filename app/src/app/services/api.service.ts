@@ -14,7 +14,7 @@ export class ApiService {
     return await this.http.post<any>(`${environment.host}/user/validate`,user).toPromise()
   }
 
-  registerUser = (user: User) => {
-
+  registerUser = async (user: User) => {
+    return await this.http.post<any>(`${environment.host}/user`,user).toPromise()
   }
 }

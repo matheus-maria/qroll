@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
@@ -14,12 +13,16 @@ import {
   MatButtonModule, MatInputModule,
   MatIconModule, MatIconRegistry, MatSnackBarModule, MatSelectModule, MatDialogModule, MatProgressSpinnerModule, MatToolbarModule, MatTableModule, MatCheckboxModule, MatProgressBarModule, MatDividerModule, MatTooltipModule, MatListModule, MatBadgeModule, MatChipsModule, MatSliderModule, MatTabsModule, MatExpansionModule, MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatSlideToggleModule
 } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
+
+
+import { PresenceComponent } from './components/presence/presence.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    PresenceComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule,    

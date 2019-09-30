@@ -1,5 +1,5 @@
 <div class="container">
-   <mat-card class="register">
+   <mat-card class="register" [ngClass]="{'register-max-height': register == true}">
       
       <div class="register-header">
 
@@ -36,6 +36,35 @@
       </form>
 
       <form *ngIf="registerForm && register" [formGroup]="registerForm" class="register-form">
+
+         <!-- NAME -->
+         <mat-form-field>
+               <mat-label>Nome</mat-label>
+               <input matInput formControlName="name" />
+            </mat-form-field>  
+
+         <div class="register-form-types">
+            <!-- Type -->
+            <mat-form-field style="width: 40%">
+                  <mat-label>Tipo</mat-label>
+                  <mat-select formControlName="type">
+                        <mat-option *ngFor="let type of types" [value]="type">                        
+                           <span>{{type}}</span>
+                        </mat-option>
+                  </mat-select>
+               </mat-form-field>
+
+               <!-- Semester -->
+               <mat-form-field style="width: 40%">
+                  <mat-label>Semestre</mat-label>
+                  <mat-select formControlName="semester">
+                        <mat-option *ngFor="let semester of semesters" [value]="semester">                        
+                           <span>{{semester}}</span>
+                        </mat-option>
+                  </mat-select>
+               </mat-form-field>
+         </div>
+         
 
          <!-- RA -->
          <mat-form-field>
