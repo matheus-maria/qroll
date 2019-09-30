@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { NgxQRCodeModule } from 'ngx-qrcode2'; 
 
 /* MATERIAL DESIGN */
 import {
@@ -17,7 +18,7 @@ import {
 
 import { PresenceComponent } from './components/presence/presence.component';
 import { LoginComponent } from './components/login/login.component';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule,    
     BrowserModule, BrowserAnimationsModule, AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule, NgxQRCodeModule,
     // Angular Material    
     MatTabsModule, MatCardModule, MatToolbarModule, MatMenuModule, MatSnackBarModule, MatDialogModule, MatTableModule, MatListModule, MatBadgeModule, MatExpansionModule,
     MatButtonModule, MatInputModule, MatSelectModule, MatCheckboxModule, MatChipsModule,

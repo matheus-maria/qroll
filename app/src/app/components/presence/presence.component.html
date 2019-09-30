@@ -1,2 +1,3 @@
 PRESENCE
 <pre>{{ api.user | json }}</pre>
+<ngx-qrcode *ngIf="qrCode != null" id="qrCodeImage" [qrc-element-type]="canvas" [qrc-value] = "qrCode"></ngx-qrcode>
