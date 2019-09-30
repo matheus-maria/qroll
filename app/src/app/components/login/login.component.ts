@@ -91,12 +91,13 @@ export class LoginComponent implements OnInit {
     let user = {
       ra : this.form.get('ra').value,
       password : this.form.get('password').value
-    }
+    }    
 
-    let value = await this.api.login(user)
-    
-    if(value != null){
-      this.router.navigate(['presence'], value)
+    if(await this.api.login(user) != null){
+      if(this.api.user.type.toString() == 'Aluno')
+        this.router.navigate(['confirmation'])
+      else
+      this.router.navigate(['presence'])
     }
     else {
       this.showMessage('Usuário não encontrado!')

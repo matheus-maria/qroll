@@ -17,12 +17,14 @@ import {
 
 import { PresenceComponent } from './components/presence/presence.component';
 import { LoginComponent } from './components/login/login.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PresenceComponent
+    PresenceComponent,
+    ConfirmationComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule,    

@@ -10,8 +10,15 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  public user: User
+
   login = async (user: any): Promise<any> => {
-    return await this.http.post<any>(`${environment.host}/user/validate`,user).toPromise()
+    let value = await this.http.post<any>(`${environment.host}/user/validate`,user).toPromise()
+
+    if(value != null)
+      this.user = value
+
+    return value
   }
 
   registerUser = async (user: User) => {

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-presence',
-  templateUrl: './presence.component.html',
-  styleUrls: ['./presence.component.scss']
+  selector: 'app-confirmation',
+  templateUrl: './confirmation.component.html',
+  styleUrls: ['./confirmation.component.scss']
 })
-export class PresenceComponent implements OnInit {
+export class ConfirmationComponent implements OnInit {
 
   constructor(private router: Router, public api: ApiService) { }
 
